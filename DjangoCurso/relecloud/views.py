@@ -15,6 +15,10 @@ def destinations(request):
     all_destinations = models.Destination.objects.all()
     return render(request, 'destinations.html', { 'destinations': all_destinations})
 
+def ver_opiniones(request):
+    opiniones = Opinion.objects.all()
+    return render(request, 'ver_opiniones.html', {'opiniones': opiniones})
+
 class DestinationDetailView(generic.DetailView):
     template_name = 'destination_detail.html'
     model = models.Destination
@@ -31,3 +35,10 @@ class InfoRequestCreate(SuccessMessageMixin, generic.CreateView):
     fields = ['name', 'email', 'cruise', 'notes']
     success_url = reverse_lazy('index')
     success_message = 'Thank you, %(name)s! We will email you when we have more information about %(cruise)s!'
+
+class Opinion(SuccessMessageMixin, generic.CreateView):
+    template_name = 'opinion.html'
+    model = models.Opinion
+    fields = ['name','cruise', 'opinion']
+    success_url = reverse_lazy('opinion')  ### Cambiar Veropinion
+    success_message = 'Thank you, %(name)s!'

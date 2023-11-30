@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%h1#@6+2tm+-3-%@24%nhgs7a3bdlk#v8&+p#=fl#mbjo5m*bc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['tej-space-tours.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',  
 ]
+
 
 # 'crispy_bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -84,15 +85,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django",
-        "USER": "django@tej-relecloud-db",
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": "tej-relecloud-db.postgres.database.azure.com",
-        "PORT": "5432",
-        "OPTIONS": {"sslmode": "require"},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        #"ENGINE": "django.db.backends.postgresql",
+        #"NAME": "django",
+        #"USER": "django@tej-relecloud-db",
+        #"PASSWORD": os.getenv("DB_PASSWORD"),
+        #"HOST": "tej-relecloud-db.postgres.database.azure.com",
+        #"PORT": "5432",
+        #"OPTIONS": {"sslmode": "require"},
     }
 }
 

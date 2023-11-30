@@ -1,0 +1,11 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Opiniones Recogidas:</h2>
+    <ul>
+        {% for opinion in opiniones %}
+            <li>{{ opinion.name }} - {{ opinion.cruise }} - {{ opinion.opinion }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

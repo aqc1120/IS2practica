@@ -51,3 +51,15 @@ class InfoRequest(models.Model):
         Cruise,
         on_delete=models.PROTECT
     )
+
+
+class Opinion(models.Model):
+    name = models.CharField(max_length=255)
+    cruise = models.ForeignKey(
+        Cruise,
+        on_delete=models.PROTECT
+    )
+    opinion = models.TextField()
+
+    def __str__(self):
+        return self.name
